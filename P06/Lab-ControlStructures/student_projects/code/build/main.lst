@@ -1,0 +1,507 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;* -----------------------------------------------------
+                       -------------
+    2 00000000         ;* --  _____       ______  _____                        
+                                   -
+    3 00000000         ;* -- |_   _|     |  ____|/ ____|                       
+                                   -
+    4 00000000         ;* --   | |  _ __ | |__  | (___    Institute of Embedded
+                        Systems    -
+    5 00000000         ;* --   | | | '_ \|  __|  \___ \   Zurich University of 
+                                   -
+    6 00000000         ;* --  _| |_| | | | |____ ____) |  Applied Sciences     
+                                   -
+    7 00000000         ;* -- |_____|_| |_|______|_____/   8401 Winterthur, Swit
+                       zerland     -
+    8 00000000         ;* -----------------------------------------------------
+                       -------------
+    9 00000000         ;* --
+   10 00000000         ;* -- Project     : CT1 - Lab 7
+   11 00000000         ;* -- Description : Control structures
+   12 00000000         ;* -- 
+   13 00000000         ;* -- $Id: main.s 3748 2016-10-31 13:26:44Z kesr $
+   14 00000000         ;* -----------------------------------------------------
+                       -------------
+   15 00000000         
+   16 00000000         
+   17 00000000         ; ------------------------------------------------------
+                       -------------
+   18 00000000         ; -- Constants
+   19 00000000         ; ------------------------------------------------------
+                       -------------
+   20 00000000         
+   21 00000000                 AREA             myCode, CODE, READONLY
+   22 00000000         
+   23 00000000                 THUMB
+   24 00000000         
+   25 00000000 60000100 
+                       ADDR_LED_15_0
+                               EQU              0x60000100
+   26 00000000 60000102 
+                       ADDR_LED_31_16
+                               EQU              0x60000102
+   27 00000000 60000114 
+                       ADDR_7_SEG_BIN_DS1_0
+                               EQU              0x60000114
+   28 00000000 60000200 
+                       ADDR_DIP_SWITCH_15_0
+                               EQU              0x60000200
+   29 00000000 60000211 
+                       ADDR_HEX_SWITCH
+                               EQU              0x60000211
+   30 00000000         
+   31 00000000 0000000B 
+                       NR_CASES
+                               EQU              0xB
+   32 00000000         
+   33 00000000         jump_table                           ; ordered table con
+                                                            taining the labels 
+                                                            of all cases
+   34 00000000         ; STUDENTS: To be programmed 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   35 00000000         
+   36 00000000 00000000        DCD              case_dark
+   37 00000004 00000000        DCD              case_add
+   38 00000008 00000000        DCD              case_sub
+   39 0000000C 00000000        DCD              case_mul
+   40 00000010 00000000        DCD              case_and
+   41 00000014 00000000        DCD              case_or
+   42 00000018 00000000        DCD              case_xor
+   43 0000001C 00000000        DCD              case_not
+   44 00000020 00000000        DCD              case_nand
+   45 00000024 00000000        DCD              case_nor
+   46 00000028 00000000        DCD              case_xnor
+   47 0000002C         
+   48 0000002C         ; END: To be programmed
+   49 0000002C         
+   50 0000002C         
+   51 0000002C         ; ------------------------------------------------------
+                       -------------
+   52 0000002C         ; -- Main
+   53 0000002C         ; ------------------------------------------------------
+                       -------------   
+   54 0000002C         
+   55 0000002C         main    PROC
+   56 0000002C                 EXPORT           main
+   57 0000002C         
+   58 0000002C         read_dipsw                           ; Read operands int
+                                                            o R0 and R1 and dis
+                                                            play on LEDs
+   59 0000002C         ; STUDENTS: To be programmed
+   60 0000002C         
+   61 0000002C         ;ops
+   62 0000002C 4F19            LDR              R7, =ADDR_DIP_SWITCH_15_0
+   63 0000002E         
+   64 0000002E 2000            MOVS             R0, #0
+   65 00000030 2100            MOVS             R1, #0
+   66 00000032         
+   67 00000032         ; read operands
+   68 00000032 7839            LDRB             R1, [R7]    ;op2
+   69 00000034 7878            LDRB             R0, [R7, #1] ;op1
+   70 00000036         
+   71 00000036         ; write to LED
+   72 00000036 4F18            LDR              R7, =ADDR_LED_15_0
+   73 00000038 7039            STRB             R1, [R7]
+   74 0000003A 7078            STRB             R0, [R7, #1]
+   75 0000003C         
+   76 0000003C         ; END: To be programmed
+   77 0000003C         
+   78 0000003C         read_hexsw                           ; Read operation in
+                                                            to R2 and display o
+                                                            n 7seg.
+   79 0000003C         ; STUDENTS: To be programmed
+   80 0000003C         
+   81 0000003C 4F17            LDR              R7, =ADDR_HEX_SWITCH
+   82 0000003E 2200            MOVS             R2, #0
+   83 00000040         
+   84 00000040         ; read hexswitch
+   85 00000040 783A            LDRB             R2, [R7, #0] ;hex-switch
+   86 00000042 270F            MOVS             R7, #0x0F
+   87 00000044 403A            ANDS             R2, R2, R7  ;only use lower 4 b
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                                                            its
+   88 00000046         
+   89 00000046         ; write to 7-segment display
+   90 00000046 4F16            LDR              R7, =ADDR_7_SEG_BIN_DS1_0
+   91 00000048 703A            STRB             R2, [R7]
+   92 0000004A         
+   93 0000004A         ; END: To be programmed
+   94 0000004A         
+   95 0000004A         case_switch                          ; Implement switch 
+                                                            statement as shown 
+                                                            on lecture slide
+   96 0000004A         ; STUDENTS: To be programmed
+   97 0000004A         
+   98 0000004A 2A0B            CMP              R2, #NR_CASES
+   99 0000004C D21C            BHS              case_default
+  100 0000004E 0092            LSLS             R2, #2
+  101 00000050 4F14            LDR              R7, =jump_table
+  102 00000052 58BF            LDR              R7, [R7, R2]
+  103 00000054 4738            BX               R7
+  104 00000056         
+  105 00000056         
+  106 00000056         ; END: To be programmed
+  107 00000056         
+  108 00000056         
+  109 00000056         ; Add the code for the individual cases below
+  110 00000056         ; - operand 1 in R0
+  111 00000056         ; - operand 2 in R1
+  112 00000056         ; - result in R0
+  113 00000056         
+  114 00000056         case_dark
+  115 00000056 4814            LDR              R0, =0
+  116 00000058 E018            B                display_result
+  117 0000005A         
+  118 0000005A         case_add
+  119 0000005A 1840            ADDS             R0, R0, R1
+  120 0000005C E016            B                display_result
+  121 0000005E         
+  122 0000005E 1A40    case_sub
+                               SUBS             R0, R0, R1
+  123 00000060 E014            B                display_result
+  124 00000062         
+  125 00000062 4348    case_mul
+                               MULS             R0, R1, R0
+  126 00000064 E012            B                display_result
+  127 00000066         
+  128 00000066 4008    case_and
+                               ANDS             R0, R0, R1
+  129 00000068 E010            B                display_result
+  130 0000006A         
+  131 0000006A 4308    case_or ORRS             R0, R0, R1
+  132 0000006C E00E            B                display_result
+  133 0000006E         
+  134 0000006E 4048    case_xor
+                               EORS             R0, R0, R1
+  135 00000070 E00C            B                display_result
+  136 00000072         
+  137 00000072 43C0    case_not
+                               MVNS             R0, R0
+  138 00000074 E00A            B                display_result
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  139 00000076         
+  140 00000076 4008    case_nand
+                               ANDS             R0, R0, R1
+  141 00000078 43C0            MVNS             R0, R0
+  142 0000007A E007            B                display_result
+  143 0000007C         
+  144 0000007C 4308    case_nor
+                               ORRS             R0, R0, R1
+  145 0000007E 43C0            MVNS             R0, R0
+  146 00000080 E004            B                display_result
+  147 00000082         
+  148 00000082 4048    case_xnor
+                               EORS             R0, R0, R1
+  149 00000084 43C0            MVNS             R0, R0
+  150 00000086 E001            B                display_result
+  151 00000088         
+  152 00000088 4808    case_default
+                               LDR              R0, =0xFFFF
+  153 0000008A E7FF            B                display_result
+  154 0000008C         
+  155 0000008C         ; STUDENTS: To be programmed
+  156 0000008C         
+  157 0000008C         
+  158 0000008C         ; END: To be programmed
+  159 0000008C         
+  160 0000008C         
+  161 0000008C         display_result                       ; Display result on
+                                                             LEDs
+  162 0000008C         ; STUDENTS: To be programmed
+  163 0000008C         
+  164 0000008C 4F08            LDR              R7, =ADDR_LED_31_16
+  165 0000008E 8038            STRH             R0, [R7]
+  166 00000090         
+  167 00000090         ; END: To be programmed
+  168 00000090         
+  169 00000090 E7CC            B                read_dipsw
+  170 00000092         
+  171 00000092 00 00           ALIGN
+  172 00000094                 ENDP
+  173 00000094         
+  174 00000094         ; ------------------------------------------------------
+                       -------------
+  175 00000094         ; -- End of file
+  176 00000094         ; ------------------------------------------------------
+                       -------------                      
+  177 00000094                 END
+              60000200 
+              60000100 
+              60000211 
+              60000114 
+              00000000 
+              00000000 
+              0000FFFF 
+              60000102 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
+ork --depend=.\build\main.d -o.\build\main.o -I.\RTE\_Target_1 -IC:\Users\joelp
+\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include -IC:\Users\joe
+lp\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\m0 -IC:\User
+s\joelp\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include -IC:\Keil_
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION
+ SETA 531" --predefine="_RTE_ SETA 1" --predefine="_RTE_ SETA 1" --list=.\build
+\main.lst app\main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+case_add 0000005A
+
+Symbol: case_add
+   Definitions
+      At line 118 in file app\main.s
+   Uses
+      At line 37 in file app\main.s
+Comment: case_add used once
+case_and 00000066
+
+Symbol: case_and
+   Definitions
+      At line 128 in file app\main.s
+   Uses
+      At line 40 in file app\main.s
+Comment: case_and used once
+case_dark 00000056
+
+Symbol: case_dark
+   Definitions
+      At line 114 in file app\main.s
+   Uses
+      At line 36 in file app\main.s
+Comment: case_dark used once
+case_default 00000088
+
+Symbol: case_default
+   Definitions
+      At line 152 in file app\main.s
+   Uses
+      At line 99 in file app\main.s
+Comment: case_default used once
+case_mul 00000062
+
+Symbol: case_mul
+   Definitions
+      At line 125 in file app\main.s
+   Uses
+      At line 39 in file app\main.s
+Comment: case_mul used once
+case_nand 00000076
+
+Symbol: case_nand
+   Definitions
+      At line 140 in file app\main.s
+   Uses
+      At line 44 in file app\main.s
+Comment: case_nand used once
+case_nor 0000007C
+
+Symbol: case_nor
+   Definitions
+      At line 144 in file app\main.s
+   Uses
+      At line 45 in file app\main.s
+Comment: case_nor used once
+case_not 00000072
+
+Symbol: case_not
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 137 in file app\main.s
+   Uses
+      At line 43 in file app\main.s
+Comment: case_not used once
+case_or 0000006A
+
+Symbol: case_or
+   Definitions
+      At line 131 in file app\main.s
+   Uses
+      At line 41 in file app\main.s
+Comment: case_or used once
+case_sub 0000005E
+
+Symbol: case_sub
+   Definitions
+      At line 122 in file app\main.s
+   Uses
+      At line 38 in file app\main.s
+Comment: case_sub used once
+case_switch 0000004A
+
+Symbol: case_switch
+   Definitions
+      At line 95 in file app\main.s
+   Uses
+      None
+Comment: case_switch unused
+case_xnor 00000082
+
+Symbol: case_xnor
+   Definitions
+      At line 148 in file app\main.s
+   Uses
+      At line 46 in file app\main.s
+Comment: case_xnor used once
+case_xor 0000006E
+
+Symbol: case_xor
+   Definitions
+      At line 134 in file app\main.s
+   Uses
+      At line 42 in file app\main.s
+Comment: case_xor used once
+display_result 0000008C
+
+Symbol: display_result
+   Definitions
+      At line 161 in file app\main.s
+   Uses
+      At line 116 in file app\main.s
+      At line 120 in file app\main.s
+      At line 123 in file app\main.s
+      At line 126 in file app\main.s
+      At line 129 in file app\main.s
+      At line 132 in file app\main.s
+      At line 135 in file app\main.s
+      At line 138 in file app\main.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 142 in file app\main.s
+      At line 146 in file app\main.s
+      At line 150 in file app\main.s
+      At line 153 in file app\main.s
+
+jump_table 00000000
+
+Symbol: jump_table
+   Definitions
+      At line 33 in file app\main.s
+   Uses
+      At line 101 in file app\main.s
+Comment: jump_table used once
+main 0000002C
+
+Symbol: main
+   Definitions
+      At line 55 in file app\main.s
+   Uses
+      At line 56 in file app\main.s
+Comment: main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 21 in file app\main.s
+   Uses
+      None
+Comment: myCode unused
+read_dipsw 0000002C
+
+Symbol: read_dipsw
+   Definitions
+      At line 58 in file app\main.s
+   Uses
+      At line 169 in file app\main.s
+Comment: read_dipsw used once
+read_hexsw 0000003C
+
+Symbol: read_hexsw
+   Definitions
+      At line 78 in file app\main.s
+   Uses
+      None
+Comment: read_hexsw unused
+19 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+ADDR_7_SEG_BIN_DS1_0 60000114
+
+Symbol: ADDR_7_SEG_BIN_DS1_0
+   Definitions
+      At line 27 in file app\main.s
+   Uses
+      At line 90 in file app\main.s
+Comment: ADDR_7_SEG_BIN_DS1_0 used once
+ADDR_DIP_SWITCH_15_0 60000200
+
+Symbol: ADDR_DIP_SWITCH_15_0
+   Definitions
+      At line 28 in file app\main.s
+   Uses
+      At line 62 in file app\main.s
+Comment: ADDR_DIP_SWITCH_15_0 used once
+ADDR_HEX_SWITCH 60000211
+
+Symbol: ADDR_HEX_SWITCH
+   Definitions
+      At line 29 in file app\main.s
+   Uses
+      At line 81 in file app\main.s
+Comment: ADDR_HEX_SWITCH used once
+ADDR_LED_15_0 60000100
+
+Symbol: ADDR_LED_15_0
+   Definitions
+      At line 25 in file app\main.s
+   Uses
+      At line 72 in file app\main.s
+Comment: ADDR_LED_15_0 used once
+ADDR_LED_31_16 60000102
+
+Symbol: ADDR_LED_31_16
+   Definitions
+      At line 26 in file app\main.s
+   Uses
+      At line 164 in file app\main.s
+Comment: ADDR_LED_31_16 used once
+NR_CASES 0000000B
+
+Symbol: NR_CASES
+   Definitions
+      At line 31 in file app\main.s
+   Uses
+      At line 98 in file app\main.s
+Comment: NR_CASES used once
+6 symbols
+360 symbols in table

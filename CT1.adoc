@@ -1,0 +1,165 @@
+= CT1 Zusammenfassung
+Joël Plambeck <plambjoe@students.zhaw.ch>
+0.1, 02.11.2020
+
+:toc:
+:stem: asciimath
+:icons: font
+:imagesdir: img
+
+== Flags
+
+|===
+|Flag |Meaning | Aciton |Operands
+
+|Negative | MSB = 1 | N = 1 | signed
+|Zero | Result = 0 | Z = 1 | signed, unsigned
+| Carry | Carry | C = 1 | unsigned
+| Overflow | Overflow | V = 1 | signed
+
+|===
+
+== Arithmetic Operations
+
+|=== 
+| Bitwise operations | Shift / Rotate
+
+a| image::bitManipulations.PNG[Image Manipulations]
+a| image::shiftRotate.PNG[Image Manipulations]
+WARNING: LSRS can only be used for unsigned, use ASRS for signed
+|===
+
+== Unsigned / Signed Integers
+
+=== Addition / Subtraction
+[frame="none", grid="none", cols="6,4"]
+|===
+|| 
+a| [horizontal]
+Unsigned:: 
+* *Addition*: C = 1 -> Carry. Result too large for available bits
+* *Subtraction*: C = 0 -> Borrow. Result less than Zero (no negative numbers) 
+Signed:: 
+* *Addition*: potential *overflow* with equally signed operands
+* *Subtraction*: potential *overlfow* with oppositely signed operands
+
+a| image::zahlenrad.png[Zahlenrad, width="300"]
+
+|===
+
+=== Multiword Addidtion / Subtraction
+
+|===
+|Multi-Word Addition | Multi-Word Subtraction
+
+a| image::multiAdd.png[Multiword addition, width="400"]
+a| image::multiSub.png[Multiword addition, width="400"]
+
+|===
+
+=== Integer Casting
+
+[cols="2,4,4"]
+|===
+| | Unsigned (Carry) | Signed (Overflow)
+
+| *Extension*
+a| stem:[1011 -> ubrace(bb 0000) 1011]
+
+stem:[0011 -> ubrace(bb 0000) 0011]
+
+a| stem:[bb 1 011 -> ubrace(bb 1111) 1011]
+
+stem:[bb 0 011 -> ubrace(bb 0000) 0011]
+
+| *Truncation*
+a| Modulo Operation
+
+image::moduloOperation.png[Modulo Operation]
+
+a| possible change of sign
+
+image::changeOfSign.png[Possible Change of Sign]
+|===
+
+== Branches
+
+[grid="none", frame="none"]
+|===
+||
+a|
+* Type
+** *Unconditional*: jump always
+** *Conditional*: jump only if condition is met
+* Address hand-over
+** *Direct*: target address part of instruction
+** *Indirect*: target address in register
+* Address of target
+** *Relative*: target address relative to PC
+** *Absolute*: absolute target address
+
+a| 
+image::branches.png[Branches diagram]
+
+|===
+
+=== Unconditional
+
+|===
+|Symbol | Properties
+
+|B | direct, relative
+|BX | indirect, absolute
+|===
+
+=== Conditional
+
+==== Flags
+|===
+|Symbol | Condition | Flag
+
+|BEQ | Equal | Z == 1
+
+|BNE | Not equal | Z == 0
+
+|BCS | Carry set | C == 1
+
+|BCC | Carry clear | C == 0
+
+|BMI | Negative | N == 1
+
+|BPL | Positive or Zero | N == 0
+
+|BVS | Overflow | V == 1
+
+|BVC | No overflow | V == 0
+
+|===
+
+==== Unsigned
+
+|===
+|Symbol | Condition (Unsigned) | Flag
+
+|BHS (= BCS) | >= greater than or equal | C == 1
+|BLO (= BCC) | < less than | C == 0
+|BHI | > greater than | C == 1 and Z == 0
+|BLS | <= less than or equal | C == 0 or Z == 1 
+|===
+
+==== Signed
+
+|===
+|Symbol | Condition (Signed) | Flag
+
+|BGE | >= greater than or equal | N == V
+|BLT | < less than | N != V
+|BGT | > greater than | Z == 0 and N == V
+|BLE | <= less than or equal | Z == 1 or N != V
+|===
+
+== SEP Handout
+
+image::SEP_handout1.jpg[SEP Handout]
+
+image::SEP_handout2.jpg[SEP Handout]
