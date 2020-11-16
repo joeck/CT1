@@ -158,6 +158,17 @@ image::branches.png[Branches diagram]
 |BLE | <= less than or equal | Z == 1 or N != V
 |===
 
+== Parameterübergabe
+
+|===
+|           |Register   | Globales Memory   | Stack
+
+|Effizient  | ++        | --                |
+|Reentry    | +-        | --                |     
+|Plattform
+
+|===
+
 == SEP Handout
 
 image::SEP_handout1.jpg[SEP Handout]
