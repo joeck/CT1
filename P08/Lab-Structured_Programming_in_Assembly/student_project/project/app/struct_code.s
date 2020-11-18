@@ -125,7 +125,7 @@ no_button
 		LDR 		R7, =ADDR_DIP_SWITCH_7_0
 		LDRB 		R2, [R7]
 		
-		SUBS		R2, R2, R0
+		SUBS		R2, R2, R0		; R2 = diff = DIP_SW - ADC
 		BMI			red
 		
 		CMP			R2, #16
@@ -143,7 +143,8 @@ bit_8
 bit_end
 		
 		LDR			R7, =ADDR_LCD_ASCII
-		STRH		R6, [R7]
+		LDRB		R6, [R6]
+		STRB		R6, [R7]
 		BL			write_bit_ascii
 		
 		; LCD to Blue
@@ -153,10 +154,18 @@ bit_end
 		BL			end_red
 		
 red
-		; LCD to Blue
+		; LCD to Red
 		LDR			R7, =ADDR_LCD_COLOUR
 		LDR			R6, =0xFFFF
 		STRH		R6, [R7]
+		
+		; count zeros in diff
+		MVNS 		R6, R2	;R6 = !diff
+		BL			count_zeros
+		LDR			R7, =ADDR_LCD_ASCII
+		LDR			R5, =ASCII_DIGIT_OFFSET
+		STRB		R6, [R7, R5]
+		
 
 end_red
 		LDR			R7, =ADDR_7_SEG_BIN_DS3_0
@@ -167,6 +176,19 @@ end_no_button
 ; END: To be programmed
         B          main_loop
 
+count_zeros	;count zeros in R6, returns numbers of zeros in R6
+		PUSH		{R0, R1, R3}
+		MOVS		R0, #0
+		MOVS		R3, #0
+		MOVS		R1, #8
+zeros_loop
+		LSRS		R6, R6, #1
+		ADCS		R0, R3
+		SUBS		R1, R1, #1
+		BNE			zeros_loop
+		MOVS		R6, R0
+		POP			{R0, R1, R3}
+		BX			LR
 		
 clear_lcd_color
 		PUSH		{R6, R7}

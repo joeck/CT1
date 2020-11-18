@@ -7,6 +7,8 @@ Joël Plambeck <plambjoe@students.zhaw.ch>
 :icons: font
 :imagesdir: img
 
+Dokumentation: https://ennis.zhaw.ch/wiki/doku.php[Moodle]
+
 == Flags
 
 |===
