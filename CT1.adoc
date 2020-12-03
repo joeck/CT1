@@ -175,6 +175,13 @@ image::branches.png[Branches diagram]
 
 image::StackFrame.png[Stack Frame]
 
+
+== Linking
+
+image::linking.png[Linking]
+
+image::importExport.png[Import & Export]
+
 == SEP Handout
 
 image::SEP_handout1.jpg[SEP Handout]
