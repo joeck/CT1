@@ -436,6 +436,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article data-line-1">
 <div id="header">
@@ -446,19 +447,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="revnumber">version 0.1,</span>
 <span id="revdate">02.11.2020</span>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_computer_technik">Computer Technik</a>
+<ul class="sectlevel2">
+<li><a href="#_from_c_to_executable">From C to executable</a></li>
+</ul>
+</li>
+<li><a href="#_cortex_m">Cortex-M</a>
+<ul class="sectlevel2">
+<li><a href="#_object_file_sections">Object File Sections</a></li>
+</ul>
+</li>
+<li><a href="#_data_transfer">Data Transfer</a></li>
+<li><a href="#_flags">Flags</a></li>
+<li><a href="#_arithmetic_operations">Arithmetic Operations</a></li>
+<li><a href="#_unsigned_signed_integers">Unsigned / Signed Integers</a>
+<ul class="sectlevel2">
+<li><a href="#_addition_subtraction">Addition / Subtraction</a></li>
+<li><a href="#_multiword_addidtion_subtraction">Multiword Addidtion / Subtraction</a></li>
+<li><a href="#_integer_casting">Integer Casting</a></li>
+</ul>
+</li>
+<li><a href="#_loops">Loops</a></li>
+<li><a href="#_branches">Branches</a>
+<ul class="sectlevel2">
+<li><a href="#_compare_and_test">Compare and Test</a></li>
+<li><a href="#_unconditional">Unconditional</a></li>
+<li><a href="#_conditional">Conditional</a></li>
+</ul>
+</li>
+<li><a href="#_parameterübergabe">Parameterübergabe</a>
+<ul class="sectlevel2">
+<li><a href="#_subroutine">Subroutine</a></li>
+<li><a href="#_calling_assembly_subroutine_from_c">Calling Assembly Subroutine from C</a></li>
+</ul>
+</li>
+<li><a href="#_stack">Stack</a></li>
+<li><a href="#_linking">Linking</a></li>
+<li><a href="#_exceptions">Exceptions</a>
+<ul class="sectlevel2">
+<li><a href="#_exceptional_control_flow">Exceptional Control Flow</a></li>
+<li><a href="#_exceptions_cortex_m3m4">Exceptions Cortex-M3/M4</a></li>
+<li><a href="#_interrupts">Interrupts</a></li>
+</ul>
+</li>
+<li><a href="#_pipeline">Pipeline</a></li>
+<li><a href="#_sep_handout">SEP Handout</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph data-line-10">
+<div class="paragraph data-line-9">
 <p>Dokumentation: <a href="https://ennis.zhaw.ch/wiki/doku.php">Moodle</a></p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-12">
+<div class="sect1 data-line-11">
 <h2 id="_computer_technik">Computer Technik</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-15">
+<table class="tableblock frame-all grid-all stretch data-line-14">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -496,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-all stretch data-line-26">
+<table class="tableblock frame-none grid-all stretch data-line-25">
 <colgroup>
 <col style="width: 70%;">
 <col style="width: 30%;">
@@ -531,9 +582,9 @@ Secondary storage
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-35">
+<div class="sect2 data-line-34">
 <h3 id="_from_c_to_executable">From C to executable</h3>
-<table class="tableblock frame-all grid-all stretch data-line-38">
+<table class="tableblock frame-all grid-all stretch data-line-37">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -621,10 +672,10 @@ Linker
 </div>
 </div>
 </div>
-<div class="sect1 data-line-58">
+<div class="sect1 data-line-57">
 <h2 id="_cortex_m">Cortex-M</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-61">
+<table class="tableblock frame-all grid-all stretch data-line-60">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -690,7 +741,7 @@ Linker
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch data-line-78">
+<table class="tableblock frame-none grid-none stretch data-line-77">
 <colgroup>
 <col style="width: 65%;">
 <col style="width: 35%;">
@@ -733,9 +784,9 @@ Linker
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-89">
+<div class="sect2 data-line-88">
 <h3 id="_object_file_sections">Object File Sections</h3>
-<table class="tableblock frame-all grid-all stretch data-line-92">
+<table class="tableblock frame-all grid-all stretch data-line-91">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -771,10 +822,10 @@ Linker
 </div>
 </div>
 </div>
-<div class="sect1 data-line-101">
+<div class="sect1 data-line-100">
 <h2 id="_data_transfer">Data Transfer</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-104">
+<table class="tableblock frame-all grid-all stretch data-line-103">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -802,6 +853,9 @@ halfword_array DCW 0x0011, 0x2233</p>
 <div class="content">
 <img src="img/LoadingLiterals.png" alt="Loading Literals">
 </div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/arrays.png" alt="Arrays"></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
@@ -894,12 +948,12 @@ halfword_array DCW 0x0011, 0x2233</p>
 </table>
 </div>
 </div>
-<div class="sect1 data-line-137">
+<div class="sect1 data-line-138">
 <h2 id="_unsigned_signed_integers">Unsigned / Signed Integers</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-139">
+<div class="sect2 data-line-140">
 <h3 id="_addition_subtraction">Addition / Subtraction</h3>
-<table class="tableblock frame-none grid-none stretch data-line-141">
+<table class="tableblock frame-none grid-none stretch data-line-142">
 <colgroup>
 <col style="width: 60%;">
 <col style="width: 40%;">
@@ -957,9 +1011,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-155">
+<div class="sect2 data-line-156">
 <h3 id="_multiword_addidtion_subtraction">Multiword Addidtion / Subtraction</h3>
-<table class="tableblock frame-all grid-all stretch data-line-157">
+<table class="tableblock frame-all grid-all stretch data-line-158">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -986,9 +1040,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-165">
+<div class="sect2 data-line-166">
 <h3 id="_integer_casting">Integer Casting</h3>
-<table class="tableblock frame-all grid-all stretch data-line-168">
+<table class="tableblock frame-all grid-all stretch data-line-169">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1041,10 +1095,10 @@ Signed
 </div>
 </div>
 </div>
-<div class="sect1 data-line-190">
+<div class="sect1 data-line-191">
 <h2 id="_loops">Loops</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-192">
+<table class="tableblock frame-all grid-all stretch data-line-193">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1086,19 +1140,15 @@ Signed
 </table>
 </div>
 </div>
-<div class="sect1 data-line-201">
+<div class="sect1 data-line-202">
 <h2 id="_branches">Branches</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-204">
+<table class="tableblock frame-none grid-none stretch data-line-205">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1442,12 +1492,43 @@ TST
 </tr>
 </tbody>
 </table>
+<div class="sect2 data-line-309">
+<h3 id="_subroutine">Subroutine</h3>
+<table class="tableblock frame-all grid-all stretch data-line-311">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Caller</th>
+<th class="tableblock halign-left valign-top">Callee</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/subCaller.png" alt="Subroutine caller"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/subCallee.png" alt="Subroutine callee"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 data-line-318">
+<h3 id="_calling_assembly_subroutine_from_c">Calling Assembly Subroutine from C</h3>
+<div class="paragraph data-line-320">
+<p><span class="image"><img src="img/subFromC.png" alt="Assembly Subroutine from C" width="400"></span></p>
 </div>
 </div>
-<div class="sect1 data-line-309">
+</div>
+</div>
+<div class="sect1 data-line-322">
 <h2 id="_stack">Stack</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-312">
+<table class="tableblock frame-none grid-none stretch data-line-325">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1478,7 +1559,7 @@ TST
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch data-line-325">
+<table class="tableblock frame-all grid-all stretch data-line-338">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1523,10 +1604,10 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-333">
+<div class="sect1 data-line-346">
 <h2 id="_linking">Linking</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-336">
+<table class="tableblock frame-all grid-all stretch data-line-349">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1548,15 +1629,253 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-341">
+<div class="sect1 data-line-354">
+<h2 id="_exceptions">Exceptions</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-356">
+<h3 id="_exceptional_control_flow">Exceptional Control Flow</h3>
+<table class="tableblock frame-all grid-all stretch data-line-359">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polling</th>
+<th class="tableblock halign-left valign-top">Interrupt-Driven I/O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image right"><img src="img/exceptionPolling.png" alt="Exception Polling" width="150"></span>
+Reading of status registers in loop</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Advantages</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Simle and straightforward</p>
+</li>
+<li>
+<p>Implicit synchronization</p>
+</li>
+<li>
+<p>Deterministic</p>
+</li>
+<li>
+<p>No additional interrupt logic required</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Disadvantages</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Busy wait &#8594; wastes CPU time</p>
+</li>
+<li>
+<p>Long reaction times</p>
+</li>
+<li>
+<p>Reduzierter Durchsatz</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image right"><img src="img/exceptionInterrupt.png" alt="Exception interrupt" width="150"></span>
+Interrupting program execution when the error occurs</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initializes peripherals</p>
+</li>
+<li>
+<p>Execute other tasks</p>
+</li>
+<li>
+<p>Peripherals signal when they require attention</p>
+</li>
+<li>
+<p>Events interrupt program execution</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Advantages</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>No busy wait &#8594; better use of CPU time</p>
+</li>
+<li>
+<p>short reaction times</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Disadvantages</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>No synchronization</p>
+</li>
+<li>
+<p>difficult debugging</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 data-line-394">
+<h3 id="_exceptions_cortex_m3m4">Exceptions Cortex-M3/M4</h3>
+<table class="tableblock frame-all grid-all stretch data-line-397">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Interrupt sources: IRQ0 - IRQ239</th>
+<th class="tableblock halign-left valign-top">System exceptions</th>
+<th class="tableblock halign-left valign-top">Vector Table & NVIC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Peripherals singal to CPU of event requiring attention</p>
+</li>
+<li>
+<p>Can alternatively be generated by software request</p>
+</li>
+<li>
+<p>Asynchronous to instruction execution</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Reset: Restart of processor</p>
+</li>
+<li>
+<p>NMI: Non-maskable Interrupt: Can&#8217;t be ingored</p>
+</li>
+<li>
+<p>Faults: Eg. undefined instructions, analigned access, etc.</p>
+</li>
+<li>
+<p>System Level Calls: OS calls</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/VectorTable.png" alt="Vector Table"></span>
+<span class="image"><img src="img/NVIC.png" alt="Nested Vectored Interrupt Controller"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch data-line-418">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initialization</th>
+<th class="tableblock halign-left valign-top">ISR Call</th>
+<th class="tableblock halign-left valign-top">Exception States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/exceptionInit.png" alt="Exception Initialization"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/ISR.png" alt="ISR call"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/exceptionStates.png" alt="Exception states"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/exceptionInterruptControl.png" alt="Exception Interrupt Control"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 data-line-429">
+<h3 id="_interrupts">Interrupts</h3>
+<table class="tableblock frame-none grid-all stretch data-line-432">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<div class="title">Trigger hardware interrupt via Software</div>
+<p><span class="image"><img src="img/interrupt1.png" alt="Trigger hardware interrupt via Software"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<div class="title">Interrupt Active Status Registers</div>
+<p><span class="image"><img src="img/interrupt2.png" alt="Interrupt Active Status Registers"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<div class="title">Enable Registers</div>
+<p><span class="image"><img src="img/interrupt3.png" alt="Enable Registers"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<div class="title">Priority</div>
+<p><span class="image"><img src="img/interrupt4.png" alt="Priority"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-450">
+<h2 id="_pipeline">Pipeline</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1 data-line-452">
 <h2 id="_sep_handout">SEP Handout</h2>
 <div class="sectionbody">
-<div class="imageblock data-line-343">
+<div class="imageblock data-line-454">
 <div class="content">
 <img src="img/SEP_handout1.jpg" alt="SEP Handout">
 </div>
 </div>
-<div class="imageblock data-line-345">
+<div class="imageblock data-line-456">
 <div class="content">
 <img src="img/SEP_handout2.jpg" alt="SEP Handout">
 </div>
@@ -1567,7 +1886,7 @@ TST
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2021-01-07 13:33:55 +0100
+Last updated 2021-01-07 14:44:22 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
