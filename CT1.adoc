@@ -192,6 +192,14 @@ image::branches.png[Branches diagram]
 
 |===
 
+=== Compare and Test
+
+[horizontal]
+CMP::
+* SUBS without storing result but setting flags
+TST::
+* AND without storing result but setting flags
+
 === Unconditional
 
 |===
