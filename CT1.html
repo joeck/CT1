@@ -490,7 +490,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/CtoExecutable.png" alt="C to Executable">
+<img src="img/HostvsTarget.png" alt="Host vs Target">
 </div>
 </div></div></td>
 </tr>
@@ -531,12 +531,100 @@ Secondary storage
 </tr>
 </tbody>
 </table>
+<div class="sect2 data-line-35">
+<h3 id="_from_c_to_executable">From C to executable</h3>
+<table class="tableblock frame-all grid-all stretch data-line-38">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/CtoExecutable.png" alt="C to Executable"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Pre-Processor
+</td>
+<td class="hdlist2">
+<div class="ulist">
+<ul>
+<li>
+<p>Kopiert inhalt von #includes</p>
+</li>
+<li>
+<p>Kopirt Makros (#define) in Quelltext</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Compiler
+</td>
+<td class="hdlist2">
+<div class="ulist">
+<ul>
+<li>
+<p>Übersetzt Computer unabhängigen C code in Assemblercode</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Assembler
+</td>
+<td class="hdlist2">
+<div class="ulist">
+<ul>
+<li>
+<p>Übersetzt in Maschineninstruktionen</p>
+</li>
+<li>
+<p>Resultat: Binary File (nicht lesbar)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Linker
+</td>
+<td class="hdlist2">
+<div class="ulist">
+<ul>
+<li>
+<p>Merge Object files</p>
+</li>
+<li>
+<p>Löst Abhängigkeiten auf</p>
+</li>
+<li>
+<p>Erzeugt executable</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="sect1 data-line-35">
+</div>
+<div class="sect1 data-line-58">
 <h2 id="_cortex_m">Cortex-M</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-38">
+<table class="tableblock frame-all grid-all stretch data-line-61">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -574,13 +662,13 @@ Secondary storage
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instruction Types</p>
+<p><strong>Instruction Types</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Memory Allocation</p>
+<p><strong>Memory Allocation</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>C to Assembly</p>
+<p><strong>C to Assembly</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -602,7 +690,7 @@ Secondary storage
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch data-line-55">
+<table class="tableblock frame-none grid-none stretch data-line-78">
 <colgroup>
 <col style="width: 65%;">
 <col style="width: 35%;">
@@ -619,19 +707,35 @@ Secondary storage
 <dd>
 <p>A muli-byte representation where the <strong>LSByte</strong> is at the lower address</p>
 </dd>
+<dt class="hdlist1">Alignment</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Half-word aligned Variables aligned on even addresses</p>
+</li>
+<li>
+<p>Word aligned Variables aligned on addresses that are divisible by four</p>
+</li>
+</ul>
+</div>
+</dd>
 </dl>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="img/littleEndian.png" alt="Little / Big Endian">
 </div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/alignment.png" alt="Alignment"></span></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-62">
+<div class="sect2 data-line-89">
 <h3 id="_object_file_sections">Object File Sections</h3>
-<table class="tableblock frame-all grid-all stretch data-line-65">
+<table class="tableblock frame-all grid-all stretch data-line-92">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -667,10 +771,10 @@ Secondary storage
 </div>
 </div>
 </div>
-<div class="sect1 data-line-74">
+<div class="sect1 data-line-101">
 <h2 id="_data_transfer">Data Transfer</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-77">
+<table class="tableblock frame-all grid-all stretch data-line-104">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -709,10 +813,10 @@ halfword_array DCW 0x0011, 0x2233</p>
 </table>
 </div>
 </div>
-<div class="sect1 data-line-88">
+<div class="sect1 data-line-115">
 <h2 id="_flags">Flags</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-90">
+<table class="tableblock frame-all grid-all stretch data-line-117">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -756,10 +860,10 @@ halfword_array DCW 0x0011, 0x2233</p>
 </table>
 </div>
 </div>
-<div class="sect1 data-line-100">
+<div class="sect1 data-line-127">
 <h2 id="_arithmetic_operations">Arithmetic Operations</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-102">
+<table class="tableblock frame-all grid-all stretch data-line-129">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -782,29 +886,20 @@ halfword_array DCW 0x0011, 0x2233</p>
 <img src="img/shiftRotate.PNG" alt="Image Manipulations">
 </div>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-LSRS can only be used for unsigned, use ASRS for signed
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><span class="image"><img src="img/mulsdiv.png" alt="Multiply and Divide by 2"></span></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div class="sect1 data-line-110">
+<div class="sect1 data-line-137">
 <h2 id="_unsigned_signed_integers">Unsigned / Signed Integers</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-112">
+<div class="sect2 data-line-139">
 <h3 id="_addition_subtraction">Addition / Subtraction</h3>
-<table class="tableblock frame-none grid-none stretch data-line-114">
+<table class="tableblock frame-none grid-none stretch data-line-141">
 <colgroup>
 <col style="width: 60%;">
 <col style="width: 40%;">
@@ -862,9 +957,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-128">
+<div class="sect2 data-line-155">
 <h3 id="_multiword_addidtion_subtraction">Multiword Addidtion / Subtraction</h3>
-<table class="tableblock frame-all grid-all stretch data-line-130">
+<table class="tableblock frame-all grid-all stretch data-line-157">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -891,9 +986,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-138">
+<div class="sect2 data-line-165">
 <h3 id="_integer_casting">Integer Casting</h3>
-<table class="tableblock frame-all grid-all stretch data-line-141">
+<table class="tableblock frame-all grid-all stretch data-line-168">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -946,10 +1041,10 @@ Signed
 </div>
 </div>
 </div>
-<div class="sect1 data-line-163">
+<div class="sect1 data-line-190">
 <h2 id="_loops">Loops</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-165">
+<table class="tableblock frame-all grid-all stretch data-line-192">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -991,10 +1086,10 @@ Signed
 </table>
 </div>
 </div>
-<div class="sect1 data-line-174">
+<div class="sect1 data-line-201">
 <h2 id="_branches">Branches</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-177">
+<table class="tableblock frame-none grid-none stretch data-line-204">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1056,18 +1151,18 @@ Signed
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-195">
+<div class="sect2 data-line-222">
 <h3 id="_compare_and_test">Compare and Test</h3>
-<div class="hdlist data-line-198">
+<div class="hdlist data-line-225">
 <table>
 <tr>
 <td class="hdlist1">
 CMP
 </td>
 <td class="hdlist2">
-<div class="ulist data-line-199">
+<div class="ulist data-line-226">
 <ul>
-<li class="data-line-199">
+<li class="data-line-226">
 <p>SUBS without storing result but setting flags</p>
 </li>
 </ul>
@@ -1079,9 +1174,9 @@ CMP
 TST
 </td>
 <td class="hdlist2">
-<div class="ulist data-line-201">
+<div class="ulist data-line-228">
 <ul>
-<li class="data-line-201">
+<li class="data-line-228">
 <p>AND without storing result but setting flags</p>
 </li>
 </ul>
@@ -1091,9 +1186,9 @@ TST
 </table>
 </div>
 </div>
-<div class="sect2 data-line-203">
+<div class="sect2 data-line-230">
 <h3 id="_unconditional">Unconditional</h3>
-<table class="tableblock frame-all grid-all stretch data-line-205">
+<table class="tableblock frame-all grid-all stretch data-line-232">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1116,9 +1211,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-212">
+<div class="sect2 data-line-239">
 <h3 id="_conditional">Conditional</h3>
-<table class="tableblock frame-none grid-none stretch data-line-215">
+<table class="tableblock frame-none grid-none stretch data-line-242">
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -1134,9 +1229,9 @@ TST
 </tr>
 </tbody>
 </table>
-<div class="sect3 data-line-219">
+<div class="sect3 data-line-246">
 <h4 id="_flags_2">Flags</h4>
-<table class="tableblock frame-all grid-all stretch data-line-220">
+<table class="tableblock frame-all grid-all stretch data-line-247">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1193,9 +1288,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-241">
+<div class="sect3 data-line-268">
 <h4 id="_unsigned">Unsigned</h4>
-<table class="tableblock frame-all grid-all stretch data-line-243">
+<table class="tableblock frame-all grid-all stretch data-line-270">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1242,9 +1337,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-254">
+<div class="sect3 data-line-281">
 <h4 id="_signed">Signed</h4>
-<table class="tableblock frame-all grid-all stretch data-line-256">
+<table class="tableblock frame-all grid-all stretch data-line-283">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1314,10 +1409,10 @@ TST
 </div>
 </div>
 </div>
-<div class="sect1 data-line-271">
+<div class="sect1 data-line-298">
 <h2 id="_parameterübergabe">Parameterübergabe</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-273">
+<table class="tableblock frame-all grid-all stretch data-line-300">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1349,10 +1444,10 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-282">
+<div class="sect1 data-line-309">
 <h2 id="_stack">Stack</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-285">
+<table class="tableblock frame-none grid-none stretch data-line-312">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1383,7 +1478,7 @@ TST
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch data-line-298">
+<table class="tableblock frame-all grid-all stretch data-line-325">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1428,10 +1523,10 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-306">
+<div class="sect1 data-line-333">
 <h2 id="_linking">Linking</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-309">
+<table class="tableblock frame-all grid-all stretch data-line-336">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1453,15 +1548,15 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-314">
+<div class="sect1 data-line-341">
 <h2 id="_sep_handout">SEP Handout</h2>
 <div class="sectionbody">
-<div class="imageblock data-line-316">
+<div class="imageblock data-line-343">
 <div class="content">
 <img src="img/SEP_handout1.jpg" alt="SEP Handout">
 </div>
 </div>
-<div class="imageblock data-line-318">
+<div class="imageblock data-line-345">
 <div class="content">
 <img src="img/SEP_handout2.jpg" alt="SEP Handout">
 </div>
@@ -1472,7 +1567,7 @@ TST
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2021-01-07 12:24:24 +0100
+Last updated 2021-01-07 13:33:55 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

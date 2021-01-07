@@ -18,7 +18,7 @@ Dokumentation: https://ennis.zhaw.ch/wiki/doku.php[Moodle]
 | image::NeumannArchitecture.png[Neumann Architecture]
 | image::HardwareComponents.png[Hardware Components]
 | image::ComputerSystem.png[Computer System]
-image::CtoExecutable.png[C to Executable]
+image::HostvsTarget.png[Host vs Target]
 
 |===
 
@@ -32,6 +32,29 @@ Secondary storage:: long-term storage, via I/O, access to data blocks, non-volat
 | image::HostvsTarget.png[Host vs Target]
 |===
 
+=== From C to executable
+
+[cols="2*a"]
+|===
+
+|image:CtoExecutable.png[C to Executable]
+|
+[horizontal]
+Pre-Processor::
+* Kopiert inhalt von #includes
+* Kopirt Makros (#define) in Quelltext
+Compiler::
+* Übersetzt Computer unabhängigen C code in Assemblercode
+Assembler::
+* Übersetzt in Maschineninstruktionen
+* Resultat: Binary File (nicht lesbar)
+Linker::
+* Merge Object files
+* Löst Abhängigkeiten auf
+* Erzeugt executable
+
+|===
+
 == Cortex-M
 
 [cols="3*a"]
@@ -43,7 +66,7 @@ Secondary storage:: long-term storage, via I/O, access to data blocks, non-volat
 |image::assemblyCode.png[Code structure]
 image::MemoryMap.png[Memory Map]
 
-| Instruction Types | Memory Allocation | C to Assembly
+| *Instruction Types* | *Memory Allocation* | *C to Assembly*
 
 |image::InstructionTypes.png[Instruction Types]
 |image::MemoryAllocation.png[Memory Allocation]
@@ -56,7 +79,11 @@ image::MemoryMap.png[Memory Map]
 | 
 Big endian:: A muli-byte representation where the **MSByte** is at the lower address
 Little endian:: A muli-byte representation where the **LSByte** is at the lower address
+Alignment::
+* Half-word aligned Variables aligned on even addresses
+* Word aligned Variables aligned on addresses that are divisible by four
 | image::littleEndian.png[Little / Big Endian]
+image:alignment.png[Alignment]
 |===
 
 === Object File Sections
@@ -104,7 +131,7 @@ halfword_array DCW 0x0011, 0x2233
 
 a| image::bitManipulations.PNG[Image Manipulations]
 a| image::shiftRotate.PNG[Image Manipulations]
-WARNING: LSRS can only be used for unsigned, use ASRS for signed
+image:mulsdiv.png[Multiply and Divide by 2]
 |===
 
 == Unsigned / Signed Integers
