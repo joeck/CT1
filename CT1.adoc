@@ -1,0 +1,310 @@
+= CT1 Zusammenfassung
+Joël Plambeck <plambjoe@students.zhaw.ch>
+0.1, 02.11.2020
+
+:toc:
+:stem: asciimath
+:icons: font
+:imagesdir: img
+
+Dokumentation: https://ennis.zhaw.ch/wiki/doku.php[Moodle]
+
+== Computer Technik
+
+[cols="3*a"]
+|===
+| Neumann Architecture | Hardware Components | Computers System & Executable
+
+| image::NeumannArchitecture.png[Neumann Architecture]
+| image::HardwareComponents.png[Hardware Components]
+| image::ComputerSystem.png[Computer System]
+image::CtoExecutable.png[C to Executable]
+
+|===
+
+[cols="7a, 3a", frame="none"]
+|===
+|
+[horizontal]
+Main memory:: central memory, via System-Bus, access to individual bytes, volatile
+Secondary storage:: long-term storage, via I/O, access to data blocks, non-volatile, slow but cheap
+
+| image::HostvsTarget.png[Host vs Target]
+|===
+
+== Cortex-M
+
+[cols="3*a"]
+|===
+|Cortex-M Architecture | Program Execution | Code structure
+
+|image::CortexM.png[Cortex-M Architecture, 300]
+|image::ProgramExecution.png[Program Execution, width=200]
+|image::assemblyCode.png[Code structure]
+image::MemoryMap.png[Memory Map]
+
+| Instruction Types | Memory Allocation | C to Assembly
+
+|image::InstructionTypes.png[Instruction Types]
+|image::MemoryAllocation.png[Memory Allocation]
+|image::cToAssembly.png[C to Assembly]
+
+|===
+
+[cols="65a, 35a", grid="none", frame="none"]
+|===
+| 
+Big endian:: A muli-byte representation where the **MSByte** is at the lower address
+Little endian:: A muli-byte representation where the **LSByte** is at the lower address
+| image::littleEndian.png[Little / Big Endian]
+|===
+
+=== Object File Sections
+
+[cols="3*a"]
+|===
+| Object File Sections |Assembly Program Structure | Variables in Object sections
+
+|image::ObjectFileSections.png[Object File Sections]
+|image::AssemblyStructure.png[Assembly Program Structure] 
+|image::variables.png[Variables in Object sections]
+
+|===
+
+== Data Transfer
+
+[cols="3*a"]
+|===
+|Arrays | Loading Literals | Literals variations
+
+|image::ArrayWord.png[Array (word)]
+byte_array DCB 0xAA, 0xBB, 0xCC
+halfword_array DCW 0x0011, 0x2233
+|image::LoadingLiterals.png[Loading Literals]
+|image::LiteralsPseudo.png[Pseudo Literals]
+
+|===
+
+== Flags
+
+|===
+|Flag |Meaning | Action |Operands
+
+|Negative | MSB = 1 | N = 1 | signed
+|Zero | Result = 0 | Z = 1 | signed, unsigned
+| Carry | Carry | C = 1 | unsigned
+| Overflow | Overflow | V = 1 | signed
+
+|===
+
+== Arithmetic Operations
+
+|=== 
+| Bitwise operations | Shift / Rotate
+
+a| image::bitManipulations.PNG[Image Manipulations]
+a| image::shiftRotate.PNG[Image Manipulations]
+WARNING: LSRS can only be used for unsigned, use ASRS for signed
+|===
+
+== Unsigned / Signed Integers
+
+=== Addition / Subtraction
+[frame="none", grid="none", cols="6,4"]
+|===
+|| 
+a| [horizontal]
+Unsigned:: 
+* *Addition*: C = 1 -> Carry. Result too large for available bits
+* *Subtraction*: C = 0 -> Borrow. Result less than Zero (no negative numbers) 
+Signed:: 
+* *Addition*: potential *overflow* with equally signed operands
+* *Subtraction*: potential *overlfow* with oppositely signed operands
+
+a| image::zahlenrad.png[Zahlenrad, width="300"]
+
+|===
+
+=== Multiword Addidtion / Subtraction
+
+|===
+|Multi-Word Addition | Multi-Word Subtraction
+
+a| image::multiAdd.png[Multiword addition, width="400"]
+a| image::multiSub.png[Multiword addition, width="400"]
+
+|===
+
+=== Integer Casting
+
+[cols="2,4,4"]
+|===
+| | Unsigned (Carry) | Signed (Overflow)
+
+| *Extension*
+a| stem:[1011 -> ubrace(bb 0000) 1011]
+
+stem:[0011 -> ubrace(bb 0000) 0011]
+
+a| stem:[bb 1 011 -> ubrace(bb 1111) 1011]
+
+stem:[bb 0 011 -> ubrace(bb 0000) 0011]
+
+| *Truncation*
+a| Modulo Operation
+
+image::moduloOperation.png[Modulo Operation]
+
+a| possible change of sign
+
+image::changeOfSign.png[Possible Change of Sign]
+|===
+
+== Loops
+
+|===
+| if | do-while | while | switch
+
+a| image::ifLoop.png[if loop]
+a| image::doWhileLoop.png[do while loop]
+a| image::whileLoop.png[while loop]
+a| image::switchCase.png[switch case]
+|===
+
+== Branches
+
+[grid="none", frame="none"]
+|===
+||
+a|
+* Type
+** *Unconditional*: jump always
+** *Conditional*: jump only if condition is met
+* Address hand-over
+** *Direct*: target address part of instruction
+** *Indirect*: target address in register
+* Address of target
+** *Relative*: target address relative to PC
+** *Absolute*: absolute target address
+
+a| 
+image::branches.png[Branches diagram]
+
+|===
+
+=== Unconditional
+
+|===
+|Symbol | Properties
+
+|B | direct, relative
+|BX | indirect, absolute
+|===
+
+=== Conditional
+
+[cols="3,7",grid="none", frame="none"]
+|===
+a| image::condBranchLimit.png[Conditional branch limit, width="250px"] | **Limited range of -256..254 Bytes** for label/pointer of conditional branch
+|===
+
+==== Flags
+|===
+|Symbol | Condition | Flag
+
+|BEQ | Equal | Z == 1
+
+|BNE | Not equal | Z == 0
+
+|BCS | Carry set | C == 1
+
+|BCC | Carry clear | C == 0
+
+|BMI | Negative | N == 1
+
+|BPL | Positive or Zero | N == 0
+
+|BVS | Overflow | V == 1
+
+|BVC | No overflow | V == 0
+
+|===
+
+==== Unsigned
+
+|===
+|Symbol | Condition (Unsigned) | Flag
+
+|BEQ | Equal | Z == 1
+|BNE | Not equal | Z == 0
+|BHS (= BCS) | >= greater than or equal | C == 1
+|BLO (= BCC) | < less than | C == 0
+|BHI | > greater than | C == 1 and Z == 0
+|BLS | <= less than or equal | C == 0 or Z == 1 
+|===
+
+==== Signed
+
+|===
+|Symbol | Condition (Signed) | Flag
+
+|BEQ | Equal | Z == 1
+|BNE | Not equal | Z == 0
+|BMI | Negative | N == 1
+|BPL | Positive or Zero | N == 0
+|BVS | Overflow | V == 1
+|BVC | No overflow | V == 0
+|BGE | >= greater than or equal | N == V
+|BLT | < less than | N != V
+|BGT | > greater than | Z == 0 and N == V
+|BLE | <= less than or equal | Z == 1 or N != V
+|===
+
+== Parameterübergabe
+
+|===
+|           |Register   | Globales Memory   | Stack
+
+|Effizient  | ++        | --                | /
+|Reentry    | /         | --                | ++     
+|Plattform
+
+|===
+
+== Stack
+
+[cols="2*a"grid="none", frame="none"]
+|===
+
+|
+* ONLY 32bit (Word)
+* Pushing and Poping of halfword and bytes not possible
+* SP % 4 = 0 -> word aligned
+* Stack-limit < SP < Stack-base
+
+>.|image::StackFrame.png[Stack Frame, width="300px"]
+
+|===
+
+[cols="3*a"]
+|===
+|image::Push.png[Push] |image::Pop.png[Pop] |image::PushOrder.png[Push order]
+|image::SPOperationsOffset.png[SP Operations] |image::SPOperationsRegister.png[SP Operations] |image::PushPopAlt.png[Push Pop alternative]
+|===
+
+
+
+
+== Linking
+
+[cols="2*a"]
+|===
+| image::linking.png[Linking]
+| image::importExport.png[Import & Export]
+|===
+
+== SEP Handout
+
+image::SEP_handout1.jpg[SEP Handout]
+
+image::SEP_handout2.jpg[SEP Handout]
