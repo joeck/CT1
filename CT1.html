@@ -450,66 +450,78 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_computer_technik">Computer Technik</a>
+<li><a href="#_computer_technik">1. Computer Technik</a>
 <ul class="sectlevel2">
-<li><a href="#_from_c_to_executable">From C to executable</a></li>
+<li><a href="#_from_c_to_executable">1.1. From C to executable</a></li>
 </ul>
 </li>
-<li><a href="#_cortex_m">Cortex-M</a>
+<li><a href="#_cortex_m">2. Cortex-M</a>
 <ul class="sectlevel2">
-<li><a href="#_object_file_sections">Object File Sections</a></li>
+<li><a href="#_object_file_sections">2.1. Object File Sections</a></li>
 </ul>
 </li>
-<li><a href="#_data_transfer">Data Transfer</a></li>
-<li><a href="#_flags">Flags</a></li>
-<li><a href="#_arithmetic_operations">Arithmetic Operations</a></li>
-<li><a href="#_unsigned_signed_integers">Unsigned / Signed Integers</a>
+<li><a href="#_data_transfer">3. Data Transfer</a></li>
+<li><a href="#_flags">4. Flags</a></li>
+<li><a href="#_arithmetic_operations">5. Arithmetic Operations</a></li>
+<li><a href="#_unsigned_signed_integers">6. Unsigned / Signed Integers</a>
 <ul class="sectlevel2">
-<li><a href="#_addition_subtraction">Addition / Subtraction</a></li>
-<li><a href="#_multiword_addidtion_subtraction">Multiword Addidtion / Subtraction</a></li>
-<li><a href="#_integer_casting">Integer Casting</a></li>
+<li><a href="#_addition_subtraction">6.1. Addition / Subtraction</a></li>
+<li><a href="#_multiword_addidtion_subtraction">6.2. Multiword Addidtion / Subtraction</a></li>
+<li><a href="#_integer_casting">6.3. Integer Casting</a></li>
 </ul>
 </li>
-<li><a href="#_loops">Loops</a></li>
-<li><a href="#_branches">Branches</a>
+<li><a href="#_loops_control_structures">7. Loops / Control Structures</a></li>
+<li><a href="#_branches">8. Branches</a>
 <ul class="sectlevel2">
-<li><a href="#_compare_and_test">Compare and Test</a></li>
-<li><a href="#_unconditional">Unconditional</a></li>
-<li><a href="#_conditional">Conditional</a></li>
+<li><a href="#_compare_and_test">8.1. Compare and Test</a></li>
+<li><a href="#_unconditional">8.2. Unconditional</a></li>
+<li><a href="#_conditional">8.3. Conditional</a></li>
 </ul>
 </li>
-<li><a href="#_parameterübergabe">Parameterübergabe</a>
+<li><a href="#_parameterübergabe">9. Parameterübergabe</a>
 <ul class="sectlevel2">
-<li><a href="#_subroutine">Subroutine</a></li>
-<li><a href="#_calling_assembly_subroutine_from_c">Calling Assembly Subroutine from C</a></li>
+<li><a href="#_subroutine">9.1. Subroutine</a></li>
+<li><a href="#_calling_assembly_subroutine_from_c">9.2. Calling Assembly Subroutine from C</a></li>
 </ul>
 </li>
-<li><a href="#_stack">Stack</a></li>
-<li><a href="#_linking">Linking</a></li>
-<li><a href="#_exceptions">Exceptions</a>
+<li><a href="#_stack">10. Stack</a></li>
+<li><a href="#_linking">11. Linking</a></li>
+<li><a href="#_exceptions">12. Exceptions</a>
 <ul class="sectlevel2">
-<li><a href="#_exceptional_control_flow">Exceptional Control Flow</a></li>
-<li><a href="#_exceptions_cortex_m3m4">Exceptions Cortex-M3/M4</a></li>
-<li><a href="#_interrupts">Interrupts</a></li>
+<li><a href="#_exceptional_control_flow">12.1. Exceptional Control Flow</a></li>
+<li><a href="#_exceptions_cortex_m3m4">12.2. Exceptions Cortex-M3/M4</a></li>
+<li><a href="#_interrupts">12.3. Interrupts</a></li>
 </ul>
 </li>
-<li><a href="#_pipeline">Pipeline</a></li>
-<li><a href="#_sep_handout">SEP Handout</a></li>
+<li><a href="#_architecture">13. Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_von_neumann_architecture">13.1. Von Neumann Architecture</a></li>
+<li><a href="#_harvard_architecture">13.2. Harvard Architecture</a></li>
+<li><a href="#_cisc_vs_risc">13.3. CISC vs RISC</a></li>
+</ul>
+</li>
+<li><a href="#_pipeline">14. Pipeline</a>
+<ul class="sectlevel2">
+<li><a href="#_examples">14.1. Examples</a></li>
+<li><a href="#_hazards">14.2. Hazards</a></li>
+</ul>
+</li>
+<li><a href="#_sep_handout">15. SEP Handout</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph data-line-9">
+<div class="paragraph data-line-11">
 <p>Dokumentation: <a href="https://ennis.zhaw.ch/wiki/doku.php">Moodle</a></p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-11">
-<h2 id="_computer_technik">Computer Technik</h2>
+<div class="sect1 data-line-13">
+<h2 id="_computer_technik">1. Computer Technik</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-14">
+<table class="tableblock frame-all grid-all stretch data-line-16">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -545,9 +557,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/CPU.png" alt="CPU"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/Components.png" alt="Components"></span></p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-all stretch data-line-25">
+<table class="tableblock frame-none grid-all stretch data-line-30">
 <colgroup>
 <col style="width: 70%;">
 <col style="width: 30%;">
@@ -578,13 +598,14 @@ Secondary storage
 <div class="content">
 <img src="img/HostvsTarget.png" alt="Host vs Target">
 </div>
+<div class="title"> 1. Host vs Target</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-34">
-<h3 id="_from_c_to_executable">From C to executable</h3>
-<table class="tableblock frame-all grid-all stretch data-line-37">
+<div class="sect2 data-line-41">
+<h3 id="_from_c_to_executable">1.1. From C to executable</h3>
+<table class="tableblock frame-all grid-all stretch data-line-44">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -672,10 +693,10 @@ Linker
 </div>
 </div>
 </div>
-<div class="sect1 data-line-57">
-<h2 id="_cortex_m">Cortex-M</h2>
+<div class="sect1 data-line-64">
+<h2 id="_cortex_m">2. Cortex-M</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-60">
+<table class="tableblock frame-all grid-all stretch data-line-67">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -704,6 +725,7 @@ Linker
 <div class="content">
 <img src="img/assemblyCode.png" alt="Code structure">
 </div>
+<div class="title"> 2. Assembly Programm Instruciton Set</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -712,15 +734,9 @@ Linker
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Instruction Types</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Memory Allocation</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>C to Assembly</strong></p>
-</div></div></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Instruction Types</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Memory Allocation</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">C to Assembly</p></th>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
@@ -741,7 +757,7 @@ Linker
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch data-line-77">
+<table class="tableblock frame-none grid-none stretch data-line-86">
 <colgroup>
 <col style="width: 65%;">
 <col style="width: 35%;">
@@ -784,9 +800,9 @@ Linker
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-88">
-<h3 id="_object_file_sections">Object File Sections</h3>
-<table class="tableblock frame-all grid-all stretch data-line-91">
+<div class="sect2 data-line-97">
+<h3 id="_object_file_sections">2.1. Object File Sections</h3>
+<table class="tableblock frame-all grid-all stretch data-line-100">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -822,10 +838,10 @@ Linker
 </div>
 </div>
 </div>
-<div class="sect1 data-line-100">
-<h2 id="_data_transfer">Data Transfer</h2>
+<div class="sect1 data-line-109">
+<h2 id="_data_transfer">3. Data Transfer</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-103">
+<table class="tableblock frame-all grid-all stretch data-line-112">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -865,59 +881,31 @@ halfword_array DCW 0x0011, 0x2233</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph data-line-125">
+<div class="title">Beispiel Array</div>
+<p><span class="image"><img src="img/Array.png" alt="Array"></span></p>
 </div>
-</div>
-<div class="sect1 data-line-115">
-<h2 id="_flags">Flags</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-117">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Flag</th>
-<th class="tableblock halign-left valign-top">Meaning</th>
-<th class="tableblock halign-left valign-top">Action</th>
-<th class="tableblock halign-left valign-top">Operands</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Negative</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MSB = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Result = 0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signed, unsigned</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Carry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Carry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsigned</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overflow</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overflow</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">signed</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1 data-line-127">
-<h2 id="_arithmetic_operations">Arithmetic Operations</h2>
+<h2 id="_flags">4. Flags</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-129">
+<div class="imageblock data-line-129">
+<div class="content">
+<img src="img/Flags.png" alt="Flags">
+</div>
+</div>
+<div class="imageblock data-line-130">
+<div class="content">
+<img src="img/FlagsOperations.png" alt="Flags Operations">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-132">
+<h2 id="_arithmetic_operations">5. Arithmetic Operations</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch data-line-134">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -948,12 +936,12 @@ halfword_array DCW 0x0011, 0x2233</p>
 </table>
 </div>
 </div>
-<div class="sect1 data-line-138">
-<h2 id="_unsigned_signed_integers">Unsigned / Signed Integers</h2>
+<div class="sect1 data-line-143">
+<h2 id="_unsigned_signed_integers">6. Unsigned / Signed Integers</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-140">
-<h3 id="_addition_subtraction">Addition / Subtraction</h3>
-<table class="tableblock frame-none grid-none stretch data-line-142">
+<div class="sect2 data-line-145">
+<h3 id="_addition_subtraction">6.1. Addition / Subtraction</h3>
+<table class="tableblock frame-none grid-none stretch data-line-147">
 <colgroup>
 <col style="width: 60%;">
 <col style="width: 40%;">
@@ -1011,9 +999,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-156">
-<h3 id="_multiword_addidtion_subtraction">Multiword Addidtion / Subtraction</h3>
-<table class="tableblock frame-all grid-all stretch data-line-158">
+<div class="sect2 data-line-161">
+<h3 id="_multiword_addidtion_subtraction">6.2. Multiword Addidtion / Subtraction</h3>
+<table class="tableblock frame-all grid-all stretch data-line-163">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1040,9 +1028,9 @@ Signed
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-166">
-<h3 id="_integer_casting">Integer Casting</h3>
-<table class="tableblock frame-all grid-all stretch data-line-169">
+<div class="sect2 data-line-171">
+<h3 id="_integer_casting">6.3. Integer Casting</h3>
+<table class="tableblock frame-all grid-all stretch data-line-174">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1095,10 +1083,10 @@ Signed
 </div>
 </div>
 </div>
-<div class="sect1 data-line-191">
-<h2 id="_loops">Loops</h2>
+<div class="sect1 data-line-196">
+<h2 id="_loops_control_structures">7. Loops / Control Structures</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-193">
+<table class="tableblock frame-all grid-all stretch data-line-198">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1140,10 +1128,10 @@ Signed
 </table>
 </div>
 </div>
-<div class="sect1 data-line-202">
-<h2 id="_branches">Branches</h2>
+<div class="sect1 data-line-207">
+<h2 id="_branches">8. Branches</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-205">
+<table class="tableblock frame-none grid-none stretch data-line-210">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1201,18 +1189,18 @@ Signed
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-222">
-<h3 id="_compare_and_test">Compare and Test</h3>
-<div class="hdlist data-line-225">
+<div class="sect2 data-line-227">
+<h3 id="_compare_and_test">8.1. Compare and Test</h3>
+<div class="hdlist data-line-230">
 <table>
 <tr>
 <td class="hdlist1">
 CMP
 </td>
 <td class="hdlist2">
-<div class="ulist data-line-226">
+<div class="ulist data-line-231">
 <ul>
-<li class="data-line-226">
+<li class="data-line-231">
 <p>SUBS without storing result but setting flags</p>
 </li>
 </ul>
@@ -1224,9 +1212,9 @@ CMP
 TST
 </td>
 <td class="hdlist2">
-<div class="ulist data-line-228">
+<div class="ulist data-line-233">
 <ul>
-<li class="data-line-228">
+<li class="data-line-233">
 <p>AND without storing result but setting flags</p>
 </li>
 </ul>
@@ -1236,9 +1224,9 @@ TST
 </table>
 </div>
 </div>
-<div class="sect2 data-line-230">
-<h3 id="_unconditional">Unconditional</h3>
-<table class="tableblock frame-all grid-all stretch data-line-232">
+<div class="sect2 data-line-235">
+<h3 id="_unconditional">8.2. Unconditional</h3>
+<table class="tableblock frame-all grid-all stretch data-line-237">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1261,9 +1249,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-239">
-<h3 id="_conditional">Conditional</h3>
-<table class="tableblock frame-none grid-none stretch data-line-242">
+<div class="sect2 data-line-244">
+<h3 id="_conditional">8.3. Conditional</h3>
+<table class="tableblock frame-none grid-none stretch data-line-247">
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -1279,9 +1267,9 @@ TST
 </tr>
 </tbody>
 </table>
-<div class="sect3 data-line-246">
-<h4 id="_flags_2">Flags</h4>
-<table class="tableblock frame-all grid-all stretch data-line-247">
+<div class="sect3 data-line-251">
+<h4 id="_flags_2">8.3.1. Flags</h4>
+<table class="tableblock frame-all grid-all stretch data-line-252">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1338,9 +1326,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-268">
-<h4 id="_unsigned">Unsigned</h4>
-<table class="tableblock frame-all grid-all stretch data-line-270">
+<div class="sect3 data-line-273">
+<h4 id="_unsigned">8.3.2. Unsigned</h4>
+<table class="tableblock frame-all grid-all stretch data-line-275">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1387,9 +1375,9 @@ TST
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-281">
-<h4 id="_signed">Signed</h4>
-<table class="tableblock frame-all grid-all stretch data-line-283">
+<div class="sect3 data-line-286">
+<h4 id="_signed">8.3.3. Signed</h4>
+<table class="tableblock frame-all grid-all stretch data-line-288">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1459,10 +1447,10 @@ TST
 </div>
 </div>
 </div>
-<div class="sect1 data-line-298">
-<h2 id="_parameterübergabe">Parameterübergabe</h2>
+<div class="sect1 data-line-303">
+<h2 id="_parameterübergabe">9. Parameterübergabe</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-300">
+<table class="tableblock frame-all grid-all stretch data-line-305">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1492,9 +1480,9 @@ TST
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-309">
-<h3 id="_subroutine">Subroutine</h3>
-<table class="tableblock frame-all grid-all stretch data-line-311">
+<div class="sect2 data-line-314">
+<h3 id="_subroutine">9.1. Subroutine</h3>
+<table class="tableblock frame-all grid-all stretch data-line-316">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1516,19 +1504,49 @@ TST
 </tr>
 </tbody>
 </table>
+<div class="dlist data-line-323">
+<dl>
+<dt class="hdlist1">BL &lt;label&gt;</dt>
+<dd>
+<div class="ulist data-line-324">
+<ul>
+<li class="data-line-324">
+<p>Store current PC in LR</p>
+</li>
+<li class="data-line-325">
+<p>Branch to &lt;label&gt;</p>
+</li>
+</ul>
 </div>
-<div class="sect2 data-line-318">
-<h3 id="_calling_assembly_subroutine_from_c">Calling Assembly Subroutine from C</h3>
-<div class="paragraph data-line-320">
+</dd>
+<dt class="hdlist1">BLX (register)</dt>
+<dd>
+<div class="ulist data-line-328">
+<ul>
+<li class="data-line-328">
+<p>Store current PC in LR</p>
+</li>
+<li class="data-line-329">
+<p>Adress of subroutine in register</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2 data-line-331">
+<h3 id="_calling_assembly_subroutine_from_c">9.2. Calling Assembly Subroutine from C</h3>
+<div class="paragraph data-line-333">
 <p><span class="image"><img src="img/subFromC.png" alt="Assembly Subroutine from C" width="400"></span></p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-322">
-<h2 id="_stack">Stack</h2>
+<div class="sect1 data-line-335">
+<h2 id="_stack">10. Stack</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-325">
+<table class="tableblock frame-none grid-none stretch data-line-338">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1559,7 +1577,7 @@ TST
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch data-line-338">
+<table class="tableblock frame-all grid-all stretch data-line-351">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1604,10 +1622,10 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-346">
-<h2 id="_linking">Linking</h2>
+<div class="sect1 data-line-359">
+<h2 id="_linking">11. Linking</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-349">
+<table class="tableblock frame-all grid-all stretch data-line-362">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1629,12 +1647,12 @@ TST
 </table>
 </div>
 </div>
-<div class="sect1 data-line-354">
-<h2 id="_exceptions">Exceptions</h2>
+<div class="sect1 data-line-367">
+<h2 id="_exceptions">12. Exceptions</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-356">
-<h3 id="_exceptional_control_flow">Exceptional Control Flow</h3>
-<table class="tableblock frame-all grid-all stretch data-line-359">
+<div class="sect2 data-line-369">
+<h3 id="_exceptional_control_flow">12.1. Exceptional Control Flow</h3>
+<table class="tableblock frame-all grid-all stretch data-line-372">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1744,9 +1762,9 @@ Interrupting program execution when the error occurs</p>
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-394">
-<h3 id="_exceptions_cortex_m3m4">Exceptions Cortex-M3/M4</h3>
-<table class="tableblock frame-all grid-all stretch data-line-397">
+<div class="sect2 data-line-407">
+<h3 id="_exceptions_cortex_m3m4">12.2. Exceptions Cortex-M3/M4</h3>
+<table class="tableblock frame-all grid-all stretch data-line-410">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1797,7 +1815,7 @@ Interrupting program execution when the error occurs</p>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch data-line-418">
+<table class="tableblock frame-all grid-all stretch data-line-431">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1828,9 +1846,9 @@ Interrupting program execution when the error occurs</p>
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-429">
-<h3 id="_interrupts">Interrupts</h3>
-<table class="tableblock frame-none grid-all stretch data-line-432">
+<div class="sect2 data-line-442">
+<h3 id="_interrupts">12.3. Interrupts</h3>
+<table class="tableblock frame-none grid-all stretch data-line-445">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1861,21 +1879,153 @@ Interrupting program execution when the error occurs</p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-450">
-<h2 id="_pipeline">Pipeline</h2>
+<div class="sect1 data-line-463">
+<h2 id="_architecture">13. Architecture</h2>
 <div class="sectionbody">
-
+<div class="sect2 data-line-465">
+<h3 id="_von_neumann_architecture">13.1. Von Neumann Architecture</h3>
+<div class="paragraph data-line-466">
+<p><span class="image"><img src="img/vonNeumann.png" alt="von Neumann Architecture" width="75%"></span></p>
 </div>
 </div>
-<div class="sect1 data-line-452">
-<h2 id="_sep_handout">SEP Handout</h2>
+<div class="sect2 data-line-468">
+<h3 id="_harvard_architecture">13.2. Harvard Architecture</h3>
+<div class="paragraph data-line-469">
+<p><span class="image"><img src="img/HarvardArchitecture.png" alt="Harvard Architecture" width="75%"></span></p>
+</div>
+</div>
+<div class="sect2 data-line-471">
+<h3 id="_cisc_vs_risc">13.3. CISC vs RISC</h3>
+<div class="paragraph data-line-472">
+<p><span class="image"><img src="img/CISCvsRISC.png" alt="CISC vs RISC"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-474">
+<h2 id="_pipeline">14. Pipeline</h2>
 <div class="sectionbody">
-<div class="imageblock data-line-454">
+<table class="tableblock frame-all grid-all stretch data-line-477">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prinzip</th>
+<th class="tableblock halign-left valign-top">Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/Pipeline.png" alt="Pipeline"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="img/PipelineLatency.png" alt="Pipeline Latency"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2 data-line-483">
+<h3 id="_examples">14.1. Examples</h3>
+<div class="paragraph data-line-484">
+<p><span class="image"><img src="img/PipelineExamples.png" alt="Pipeline Examples"></span></p>
+</div>
+</div>
+<div class="sect2 data-line-486">
+<h3 id="_hazards">14.2. Hazards</h3>
+<div class="sect3 data-line-488">
+<h4 id="_control_hazard">14.2.1. Control Hazard</h4>
+<div class="dlist data-line-490">
+<dl>
+<dt class="hdlist1">Problem</dt>
+<dd>
+<p><span class="image"><img src="img/PipelineControlHazard.png" alt="Pipeline Control Hazard" width="75%"></span></p>
+</dd>
+<dt class="hdlist1">Solution</dt>
+<dd>
+<p>2-Bit branch prediction scheme:</p>
+<div class="ulist data-line-495">
+<ul>
+<li class="data-line-495">
+<p>Idea: use two bits to remember if the branch was taken or not the last time.</p>
+</li>
+<li class="data-line-496">
+<p>Only change prediction on two succesive mispredicitons</p>
+<div class="paragraph data-line-498">
+<p><span class="image"><img src="img/LoopFusion.png" alt="Loop Fusion" width="75%"></span></p>
+</div>
+<div class="paragraph data-line-500">
+<p>Reduce Control Hazard: Loop fusion reduces control hazard</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3 data-line-502">
+<h4 id="_data_hazard">14.2.2. Data Hazard</h4>
+<div class="dlist data-line-503">
+<dl>
+<dt class="hdlist1">Problem</dt>
+<dd>
+<p><span class="image"><img src="img/PipelineDataHazard.png" alt="Pipeline Data Hazard" width="75%"></span></p>
+</dd>
+<dt class="hdlist1">Solution</dt>
+<dd>
+<p>Forwarding: Result can be forwarded to the ex phase of the next instruction</p>
+<div class="paragraph data-line-509">
+<p><span class="image"><img src="img/PipelineDataHazardSolution.png" alt="Pipeline Data Hazard Solution" width="75%"></span></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3 data-line-511">
+<h4 id="_structural_hazards">14.2.3. Structural Hazards</h4>
+<div class="dlist data-line-513">
+<dl>
+<dt class="hdlist1">Problem</dt>
+<dd>
+<p>Wenn Teile der Hardware durch mehrere Instruktionen gleichzeitig benötigt werden (Bsp. Datenbus!)</p>
+</dd>
+<dt class="hdlist1">Solution</dt>
+<dd>
+<div class="ulist data-line-517">
+<ul>
+<li class="data-line-517">
+<p>Mehrere Instruktionen auf einmal fetchen</p>
+</li>
+<li class="data-line-518">
+<p>Instruktionen früher fetchen als benötigt</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph data-line-520">
+<p>&#8658; Datenbus ist im nächsten Zyklus frei für andere Operationen</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-522">
+<h2 id="_sep_handout">15. SEP Handout</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-524">
+<p><a href="img/SEP_handouts.pdf" target="_blank" rel="noopener">SEP Handout</a></p>
+</div>
+<div class="imageblock data-line-526">
 <div class="content">
 <img src="img/SEP_handout1.jpg" alt="SEP Handout">
 </div>
 </div>
-<div class="imageblock data-line-456">
+<div class="imageblock data-line-528">
 <div class="content">
 <img src="img/SEP_handout2.jpg" alt="SEP Handout">
 </div>
@@ -1886,7 +2036,7 @@ Interrupting program execution when the error occurs</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2021-01-07 14:44:22 +0100
+Last updated 2021-01-23 13:43:21 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

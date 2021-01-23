@@ -2,9 +2,11 @@
 Joël Plambeck <plambjoe@students.zhaw.ch>
 0.1, 02.11.2020
 :toc:
+:sectnums:
 :stem: asciimath
 :icons: font
 :imagesdir: img
+:figure-caption:
 
 Dokumentation: https://ennis.zhaw.ch/wiki/doku.php[Moodle]
 
@@ -19,6 +21,9 @@ Dokumentation: https://ennis.zhaw.ch/wiki/doku.php[Moodle]
 | image::ComputerSystem.png[Computer System]
 image::HostvsTarget.png[Host vs Target]
 
+| image:CPU.png[CPU]
+2+| image:Components.png[Components]
+
 |===
 
 [cols="7a, 3a", frame="none"]
@@ -28,7 +33,9 @@ image::HostvsTarget.png[Host vs Target]
 Main memory:: central memory, via System-Bus, access to individual bytes, volatile
 Secondary storage:: long-term storage, via I/O, access to data blocks, non-volatile, slow but cheap
 
-| image::HostvsTarget.png[Host vs Target]
+| 
+.Host vs Target 
+image::HostvsTarget.png[Host vs Target]
 |===
 
 === From C to executable
@@ -62,10 +69,12 @@ Linker::
 
 |image::CortexM.png[Cortex-M Architecture, 300]
 |image::ProgramExecution.png[Program Execution, width=200]
-|image::assemblyCode.png[Code structure]
+|
+.Assembly Programm Instruciton Set
+image::assemblyCode.png[Code structure]
 image::MemoryMap.png[Memory Map]
 
-| *Instruction Types* | *Memory Allocation* | *C to Assembly*
+h| Instruction Types h| Memory Allocation h| C to Assembly
 
 |image::InstructionTypes.png[Instruction Types]
 |image::MemoryAllocation.png[Memory Allocation]
@@ -112,17 +121,13 @@ image:arrays.png[Arrays]
 
 |===
 
+.Beispiel Array
+image:Array.png[Array]
+
 == Flags
 
-|===
-|Flag |Meaning | Action |Operands
-
-|Negative | MSB = 1 | N = 1 | signed
-|Zero | Result = 0 | Z = 1 | signed, unsigned
-| Carry | Carry | C = 1 | unsigned
-| Overflow | Overflow | V = 1 | signed
-
-|===
+image::Flags.png[Flags]
+image::FlagsOperations.png[Flags Operations]
 
 == Arithmetic Operations
 
@@ -188,7 +193,7 @@ a| possible change of sign
 image::changeOfSign.png[Possible Change of Sign]
 |===
 
-== Loops
+== Loops / Control Structures
 
 |===
 | if | do-while | while | switch
@@ -314,6 +319,14 @@ a| image::condBranchLimit.png[Conditional branch limit, width="250px"] | **Limit
 |image:subCaller.png[Subroutine caller]
 |image:subCallee.png[Subroutine callee]
 |===
+
+BL <label>::
+* Store current PC in LR
+* Branch to <label>
+
+BLX (register)::
+* Store current PC in LR
+* Adress of subroutine in register
 
 === Calling Assembly Subroutine from C
 
@@ -447,9 +460,68 @@ image:interrupt4.png[Priority]
 
 |===
 
+== Architecture
+
+=== Von Neumann Architecture
+image:vonNeumann.png[von Neumann Architecture, 75%]
+
+=== Harvard Architecture
+image:HarvardArchitecture.png[Harvard Architecture, 75%]
+
+=== CISC vs RISC
+image:CISCvsRISC.png[CISC vs RISC]
+
 == Pipeline
 
+[cols="2a,1a"]
+|===
+| Prinzip | Latency
+
+| image:Pipeline.png[Pipeline] | image:PipelineLatency.png[Pipeline Latency]
+|===
+
+=== Examples
+image:PipelineExamples.png[Pipeline Examples]
+
+=== Hazards
+
+==== Control Hazard
+
+Problem::
+image:PipelineControlHazard.png[Pipeline Control Hazard, 75%]
+
+Solution::
+2-Bit branch prediction scheme:
+* Idea: use two bits to remember if the branch was taken or not the last time.
+* Only change prediction on two succesive mispredicitons
++
+image:LoopFusion.png[Loop Fusion, 75%]
++
+Reduce Control Hazard: Loop fusion reduces control hazard
+
+==== Data Hazard
+Problem::
+image:PipelineDataHazard.png[Pipeline Data Hazard, 75%]
+
+Solution::
+Forwarding: Result can be forwarded to the ex phase of the next instruction
++
+image:PipelineDataHazardSolution.png[Pipeline Data Hazard Solution, 75%]
+
+==== Structural Hazards
+
+Problem::
+Wenn Teile der Hardware durch mehrere Instruktionen gleichzeitig benötigt werden (Bsp. Datenbus!)
+
+Solution::
+* Mehrere Instruktionen auf einmal fetchen
+* Instruktionen früher fetchen als benötigt
+
+=> Datenbus ist im nächsten Zyklus frei für andere Operationen
+
 == SEP Handout
+
+link:img/SEP_handouts.pdf[SEP Handout, window=_blank]
 
 image::SEP_handout1.jpg[SEP Handout]
 
