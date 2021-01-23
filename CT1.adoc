@@ -204,6 +204,9 @@ a| image::whileLoop.png[while loop]
 a| image::switchCase.png[switch case]
 |===
 
+.For loop
+image:forLoop.png[for Loop, 75%]
+
 == Branches
 
 [cols="2*a", grid="none", frame="none"]
@@ -522,6 +525,8 @@ Solution::
 == SEP Handout
 
 link:img/SEP_handouts.pdf[SEP Handout, window=_blank]
+
+link:E:\ZHAW\3_Semester\CT1\mega_slides_ct1.pdf[Mega Slide, window=_blank]
 
 image::SEP_handout1.jpg[SEP Handout]
 
