@@ -70,6 +70,8 @@ Linker::
 |image::CortexM.png[Cortex-M Architecture, 300]
 |image::ProgramExecution.png[Program Execution, width=200]
 |
+Instruction = Mnemonic
+
 .Assembly Programm Instruciton Set
 image::assemblyCode.png[Code structure]
 image::MemoryMap.png[Memory Map]
@@ -104,6 +106,22 @@ image:alignment.png[Alignment]
 |image::AssemblyStructure.png[Assembly Program Structure] 
 |image::variables.png[Variables in Object sections]
 
+|===
+
+=== Memery Map
+
+[cols="1a,3a", frame="none", grid="none"]
+|===
+| 
+image::MemoryMap1.png[Memory Map]
+image::MemoryMap2.png[Memory Map]
+
+|
+* Grafisches Layout von Main Memory
+* Was ist wo gespeichert? 
+** RAM
+** ROM
+** I/O Register
 |===
 
 == Data Transfer
@@ -324,7 +342,7 @@ a| image::condBranchLimit.png[Conditional branch limit, width="250px"] | **Limit
 |===
 
 BL <label>::
-* Store current PC in LR
+* Store current PC (Program Counter) in LR (Link Register)
 * Branch to <label>
 
 BLX (register)::
@@ -343,7 +361,7 @@ image:subFromC.png[Assembly Subroutine from C, 400]
 |
 * ONLY 32bit (Word)
 * Pushing and Poping of halfword and bytes not possible
-* SP % 4 = 0 -> word aligned
+* SP (Stack Pointer) % 4 = 0 -> word aligned
 * Stack-limit < SP < Stack-base
 
 >.|image::StackFrame.png[Stack Frame, width="300px"]
