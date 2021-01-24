@@ -128,7 +128,7 @@ image::MemoryMap2.png[Memory Map]
 
 [cols="3*a"]
 |===
-|Arrays | Loading Literals | Literals variations
+|Arrays | Loading Literals | Literals variations / Pseudo
 
 |image::ArrayWord.png[Array (word)]
 byte_array DCB 0xAA, 0xBB, 0xCC
