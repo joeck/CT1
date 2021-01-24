@@ -544,7 +544,7 @@ Solution::
 
 link:img/SEP_handouts.pdf[SEP Handout, window=_blank]
 
-link:E:\ZHAW\3_Semester\CT1\mega_slides_ct1.pdf[Mega Slide, window=_blank]
+link:mega_slides_ct1.pdf[Mega Slide, window=_blank]
 
 image::SEP_handout1.jpg[SEP Handout]
 
