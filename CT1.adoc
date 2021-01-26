@@ -92,6 +92,10 @@ Little endian:: A muli-byte representation where the **LSByte** is at the lower 
 Alignment::
 * Half-word aligned Variables aligned on even addresses
 * Word aligned Variables aligned on addresses that are divisible by four
+
+.Registers (PC, LR, SP)
+image:registers.png[registers, 50%]
+
 | image::littleEndian.png[Little / Big Endian]
 image:alignment.png[Alignment]
 |===
@@ -122,6 +126,9 @@ image::MemoryMap2.png[Memory Map]
 ** RAM
 ** ROM
 ** I/O Register
+
+It is a graphical layout (map) showing the addresses and sizes of elements that communicate with the CPU (memories, Inputs, Outputs)
+The memory map helps users to know where each element is (e.g. when writing the appropriate drivers)
 |===
 
 == Data Transfer
@@ -157,6 +164,9 @@ a| image::shiftRotate.PNG[Image Manipulations]
 image:mulsdiv.png[Multiply and Divide by 2]
 
 |===
+
+=== Multiplikation
+image:Multiplikation.png[Multiplikation, 50%]
 
 == Unsigned / Signed Integers
 
@@ -480,6 +490,21 @@ image:interrupt3.png[Enable Registers]
 image:interrupt4.png[Priority]
 
 |===
+
+|===
+| Interrupts | Enable | Disable
+
+| Assembler | CPSIE i | CPSID i
+| C | __enable_irq(); | __disable_irq();
+
+|===
+
+==== ISR Call
+Wird vom CPU übernommen:
+
+* Beenden der Anweisung, die aktuell ausgeführt wird
+* Sichern (Push) von xPSR, PC, LR, R12, R0 – R3 auf dem Stack
+* Laden des Interruptvektors in PC und von EXC_RETURN in LR
 
 == Architecture
 
